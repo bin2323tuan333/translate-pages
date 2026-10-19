@@ -1,0 +1,137 @@
+#root {
+  width: 100%;
+  max-width: 100%;
+  border-inline: none;
+  background-color: #ffffff;
+}
+
+.app-shell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #ffffff;
+  
+  --bg: #ffffff;
+  --text: #6b6375;
+  --text-h: #08060d;
+  --border: #e5e4e7;
+}
+
+.translation-app {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.panel-left,
+.panel-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.language-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-select label {
+  font-size: 0.9rem;
+  color: var(--text);
+  min-width: 42px;
+}
+
+.language-select select {
+  flex: 1;
+  font: inherit;
+  color: var(--text-h);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  outline: none;
+}
+
+.language-select select:focus {
+  border-color: var(--accent);
+}
+
+.translation-textarea {
+  flex: 1;
+  min-height: 220px;
+  padding: 12px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-h);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  resize: vertical;
+  outline: none;
+}
+
+.translation-textarea:focus {
+  border-color: var(--accent);
+}
+
+.panel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swap-button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.swap-button:hover:not(:disabled) {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .translation-app {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-controls {
+    order: 2;
+  }
+
+  .swap-button {
+    transform: rotate(90deg);
+  }
+
+  .translation-textarea {
+    min-height: 160px;
+  }
+}
